@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<p>radio使用</p>
+			<input v-model="sex" type="radio" name="sex"  value="male" />男
+			<input v-model="sex" type="radio" name="sex"  value="female" />女<br />
+			<span>{{sex}}</span><br />
+			<p>checkbox使用</p>
+			<input v-model="selectList" type="checkbox" name="" id="" value="乒乓球" />乒乓球
+			<input v-model="selectList" type="checkbox" name="" id="" value="羽毛球" />羽毛球
+			<input v-model="selectList" type="checkbox" name="" id="" value="棒球" />棒球<br />
+			<span>{{selectList}}</span>
+			<p>select使用</p>
+			<p>你的家乡在哪里</p>
+			<select v-model="from">
+				<option value="01">湖北</option>
+				<option value="02">湖南</option>
+			</select><br />
+			<span>{{from}}</span>
+			<p>select多选</p>
+			<p>你想去哪</p>
+			<select name="" v-model="go" multiple>
+				<option value="01">湖北</option>
+				<option value="02">湖南</option>
+				<option value="03">河北</option>
+				<option value="04">北京</option>
+			</select>
+			<span>{{go}}</span>
+		</div>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#box',
+				data(){
+				    return {
+				    	sex:'',
+				    	selectList:[],
+				    	from:'',
+				    	go:[]
+				    }
+				}
+			})
+		</script>
+	</body>
+</html>
