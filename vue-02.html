@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<p>v-model.lazy只在input输入框发生blur时才触发</p>
+			<input type="text" name="message" id="message" v-model.lazy="value" />
+			<span id="">
+				{{value}}
+			</span>
+			<p>v-model.trim将用户输入的前后空格去掉，但是中间的空格无论添加多少都只会保留一个,但是实际上name的值已经改变了，查看Console</p>
+			<input type="text" name="" id="" v-model.trim="name" /><br />
+			<span>{{name}}</span>
+			<p>在前边加上pre标签就能看出来空格</p>
+			<pre><span>{{name}}</span></pre>
+			<p>v-model.number会将用户输入的字符串转换成数字,而且只能输入数字字符串，如果输入的别的会在blur的时候自动消除</p>
+			<input type="text" name="" id="" v-model.number="age" /><br />
+			<span>{{age}}</span>
+		</div>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:"#box",
+				watch:{
+				   name:function(){
+				   	 console.log(this.name)
+				   },
+				   age:function(){
+				   	console.log(typeof this.age)
+				   	console.log(this.age)
+				   },
+				   value:function(){
+				   	console.log(this.value)
+				   }
+				},
+				data (){
+					return {
+						value:1,
+						name:'2222',
+						age:'11'
+					}
+				},
+			})
+		</script>
+	</body>
+</html>
