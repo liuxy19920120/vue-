@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="msg" placeholder="add" @keyup.enter="add"/>
+			<ul>
+				<li
+					is="todo-item"
+					v-for="(item,index) in list"
+					:key="item.id"
+					:item="item"
+					@remove="list.splice(index,1)"
+				>
+				</li>
+			</ul>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		   Vue.component('todo-item',{
+		   	template:'<li>{{item.text}}\
+		   	<button @click="$emit(\'remove\')">X</button>\
+		   	</li>\
+		   	',
+		   	props:[
+		   		'item'
+		   	]
+		   })
+			new Vue({
+				el:'#app',
+				data:{
+					msg:'',
+					list:[
+						{
+							id:1,
+							text:'aaa'
+						},
+						{
+							id:2,
+							text:'ccc'
+						},
+						{
+							id:3,
+							text:'ddd'
+						},
+					],
+					next:4
+				},
+				methods:{
+					add:function(){
+						this.list.push({
+							id:this.next++,
+							text:this.msg
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

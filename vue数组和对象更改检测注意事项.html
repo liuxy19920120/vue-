@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			/*
+			 * 由于javaScript的限制，vue不能检测以下变动的数组
+			 * 1.当你利用索引直接设置一个项时，vm.items[itemIndex] = newValue
+			 * 解决方法
+			 * Vue.set(items,index,value)
+			 * items.splice(index,1,value)
+			 * 2.当你修改数组的长度时 vm.items.length = len
+			 * 解决方法
+			 * items.splice(newLength)
+			 */
+			/*
+			 * 由于javaScript的限制，vue不能检测对象属性定位添加或删除
+			 * 对于已经创建的实例，vue不能动态的添加根级别的响应式属性，可以使用Vue.set(object,key,value)方法向对象添加响应式属性
+			 * 添加多个属性不要这样
+			 * Obejct.assign(this.obj,{
+			 * 	name:'111',
+			 *  age:12
+			 * })
+			 * 应该这样
+			 * this.obj = Object.assign({},this,obj,{
+			 * 	
+			 * })
+			 */
+		-->
+	</body>
+</html>

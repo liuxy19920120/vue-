@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.active{
+				color: red;
+			}
+			.big{
+				font-size: 20px;
+				font-weight: bold;
+			}
+			.static{
+				background: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p :class="{active:isActive}">这是一个</p>
+			<p class="static" :class="{active:isActive,big:isBig}">这是二哥</p>
+			<p :class="obj">这是三个</p>
+			<p :class="[activeclass,bigclass]">这是第四</p>
+			<p :class="[{active:isActive},bigclass]">这是第五</p>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					isActive:true,
+					isBig:true,
+					obj:{
+						active:true,
+						static:false,
+						big:true
+					},
+					activeclass:'active',
+					bigclass:'big'
+				}
+			})
+		</script>
+	</body>
+</html>

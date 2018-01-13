@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in list" :key="index">
+					{{item.text}}
+				</li>
+			</ul>
+			<ul>
+				<li v-for="(value,key,index) in obj" :key="key">
+					{{key}}:{{value}}{{index}}
+				</li>
+			</ul>
+			<p>{{len}}</p>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					list:[
+						{
+							id:1,
+							text:'aaa'
+						},
+					    {
+							id:2,
+							text:'bbb'
+						},
+						{
+							id:3,
+							text:'ccc'
+						},
+					],
+					obj:{
+						first:'111',
+						last:'222',
+					}
+				},
+				computed:{
+					len:function(){
+						return Object.keys(this.obj).length
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>

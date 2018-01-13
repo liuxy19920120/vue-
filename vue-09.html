@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{html}}</p>
+			<p v-html="html"></p>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					html:'<span style="color:red">这是一个span</span>'
+				}
+			})
+		</script>
+	</body>
+</html>

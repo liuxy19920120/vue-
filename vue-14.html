@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p v-if="Math.random() > 0.5">now you see me</p>
+			<p v-else>now you don't</p>
+			<p v-show="show">show this</p>
+		</div>
+		<!--
+			v-if 更高的切换开销
+			v-show 更高的初始渲染开销 适用于频繁的切换
+			
+		-->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					show:true
+				}
+			})
+		</script>
+	</body>
+</html>

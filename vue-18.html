@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="counter++">add1</button>
+			<button @click="greet">greet</button>
+			<p>{{counter}}</p>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					counter:0
+				},
+				methods:{
+					greet(ev){
+						if(ev){
+							console.log(ev.target.tagName)
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

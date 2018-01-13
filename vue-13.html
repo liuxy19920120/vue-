@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p :style="{color:c,fontSize:fon+'px'}">这是第一</p>
+			<p :style="obj">这是第二</p>
+			<p :style="[obj,obj1]">这是第三</p>
+			<p :style="{transform:r}">这是第四</p>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					c:'red',
+					fon:30,
+					obj:{
+						color:'blue',
+						fontSize:20+'px',
+						background:'yellow'
+					},
+					obj1:{
+						fontWeight:'bold'
+					},
+					r:'rotate(45deg)'
+				}
+			})
+		</script>
+	</body>
+</html>
